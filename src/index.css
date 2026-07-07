@@ -1,13 +1,132 @@
+/* ==========================================================================
+                 :3 PAGINA WEB ESTILOS MINECRAFT EPICA :V
+   ========================================================================== */
+
+/* REGISTRO DE LA FUENTE DE MINECRAFT */
+@font-face {
+  font-family: 'MinecraftFont';
+  /* Ruta de la font */
+  src: url('../public/img/Minecraft.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* CONFIGURACIÓN DEL FONDO DE LA PÁGINA */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  /* Aplicion de la font de Minecraft como principal para toda la pagina */
+  font-family: 'MinecraftFont', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Fondo de la pagina web*/
+  background-image: url('../public/img/fondotierra.webp');
+  background-repeat: repeat;
+  background-size: auto; 
+  background-color: #2c2c2c;
+  
+  /* Evita que el navegador suavice los pixeles de la textura de fondo */
+  image-rendering: pixelated;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* DISEÑO DEL TITULO */
+h1 {
+  color: #ffcc00 !important; 
+  text-shadow: 3px 3px 0px #3f2b00, 5px 5px 0px #000000 !important; /* Sombra 3D pixelada */
+  font-size: 2.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h3, h4 {
+  font-family: 'MinecraftFont', monospace !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #2c2c2c !important; /* Texto oscuro dentro de los paneles grises */
+  text-shadow: none !important;
+}
+
+/* CONTENEDORES (TARJETAS ESTILO INVENTARIO) */
+.card {
+  background-color: rgba(139, 139, 139, 0.9) !important; 
+  border-radius: 0 !important; /* Esquinas 100% rectas y cuadradas */
+  
+  /* Borde doble pixelado */
+  border: 4px solid #4a4a4a !important;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6), 
+              inset -4px -4px 0px #555555, 
+              inset 4px 4px 0px #dbdbdb !important;
+}
+
+/* Texto de las etiquetas de los inputs (Correo, Clave, etc.) */
+.form-label {
+  color: #ffffff !important; 
+  font-family: 'MinecraftFont', monospace;
+  font-size: 14px !important; /* Tamaño para fuentes pixeladas */
+  
+  /* esto evita que el navegador engrose los píxeles artificialmente */
+  font-weight: normal !important; 
+  letter-spacing: 1px !important; /* NO MODIFICAR, ESTO HACE QUE LA FONT SE JUNTE!!!!!!!*/
+  margin-bottom: 6px !important;
+  display: inline-block;
+}
+
+/* CASILLAS DE TEXTO */
+.form-control {
+  background-color: #1a1a1a !important; 
+  color: #ffffff !important; /* texto que escribe el usuario en blanco */
+  border: 2px solid #555555 !important;
+  border-radius: 0 !important; /* esto hace que sea totalmente cuadrado */
+  font-family: 'MinecraftFont', monospace;
+  box-shadow: inset 3px 3px 0px #000000 !important;
+}
+
+/* esto es para cuando el usuario hace clic para escribir en una casilla :3 */
+.form-control:focus {
+  border-color: #ffffff !important;
+  box-shadow: inset 3px 3px 0px #000000, 0 0 5px rgba(255, 255, 255, 0.5) !important;
+  outline: none;
+}
+
+.form-control::placeholder {
+  color: #888888 !important;
+}
+
+/* BOTONES GENERALES DE BOOTSTRAP */
+.btn-primary, .btn-secondary {
+  background-color: #4a4a4a !important; 
+  color: #e0e0e0 !important; 
+  font-family: 'MinecraftFont', monospace !important;
+  border: 2px solid #000000 !important;
+  border-radius: 0 !important; 
+  box-shadow: inset -4px -4px 0px #212121, inset 4px 4px 0px #8b8b8b !important; /* Relieve 3D */
+  text-shadow: 2px 2px 0px #000000; 
+  font-size: 14px;
+  padding: 8px 16px;
+  text-transform: uppercase;
+  transition: all 0.1s ease;
+}
+
+/* Cuando pasas el mouse por encima del boton se vuelve verde pasto */
+.btn-primary:hover, .btn-secondary:hover {
+  background-color: #5c8e32 !important; 
+  color: #ffffff !important;
+  box-shadow: inset -4px -4px 0px #2e5216, inset 4px 4px 0px #a3df6d !important;
+  transform: scale(1.02);
+}
+
+/* Ajustes adicionales para la tabla de usuarios */
+.table {
+  background-color: #ffffff !important;
+  border: 2px solid #000000;
+}
+
+.table-dark {
+  background-color: #333333 !important;
+  font-family: 'MinecraftFont', monospace;
 }

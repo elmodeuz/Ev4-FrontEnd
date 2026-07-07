@@ -1,0 +1,43 @@
+/* src/Componentes/TntButton.css */
+.tnt-btn {
+  width: 40px;
+  height: 40px;
+  
+  /* DIRECCION DE LA IMAGEN DEL BOTON PARA QUE SEA UNA TNT XD*/
+  background-image: url('../../public/img/tnt.webp'); 
+  
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+  display: inline-block;
+  vertical-align: middle;
+  
+  /* Renderizado de pixeles para que conserve el estilo minecraft */
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.tnt-btn:hover {
+  transform: scale(1.15) rotate(5deg);
+}
+
+/* esto es para el destello blanco, para que parezca que la tnt va a explotar cuando la clickeen :V*/
+.tnt-active {
+  animation: mctntBlink 0.2s infinite alternate;
+  transform: scale(1.2);
+  pointer-events: none;
+}
+
+@keyframes mctntBlink {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(2.5) contrast(1.2);
+  }
+}
